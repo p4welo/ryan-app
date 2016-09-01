@@ -1,15 +1,6 @@
+import './main.less';
 import template from './main.html';
 
 export default {
-    template: template,
-    bindings: {},
-    controller: MainController
+    template: template
 };
-
-class MainController {
-    constructor() {
-        "ngInject";
-
-        this._$http = $http;
-    }
-}

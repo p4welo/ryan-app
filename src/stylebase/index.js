@@ -1,1 +1,2 @@
-require('./app.less');
+import 'bootstrap/less/bootstrap.less';
+import './app.less';

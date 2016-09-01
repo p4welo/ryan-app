@@ -1,4 +1,4 @@
 export default function ($compileProvider) {
-    "ngInject";
+    'ngInject';
     $compileProvider.debugInfoEnabled(false);
 }
