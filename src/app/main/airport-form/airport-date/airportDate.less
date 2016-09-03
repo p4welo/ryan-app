@@ -28,14 +28,6 @@ airport-date {
                             }
                         }
                     }
-
-                }
-
-
-
-                small {
-                    color: @color-text-secondary;
-                    font-weight: 400;
                 }
             }
 
@@ -59,5 +51,18 @@ airport-date {
             }
         }
 
+        .uib-button-bar {
+            .btn {
+                color: @color-text;
+                &, &:focus, &:hover {
+                    background-color: @color-primary;
+                    color: @color-text;
+                }
+
+                &:focus, &:hover {
+                    box-shadow: 0 0 0 100px rgba(0, 0, 0, .05) inset;
+                }
+            }
+        }
     }
 }

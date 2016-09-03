@@ -56,6 +56,10 @@ body {
     position: relative;
     margin-bottom: 65px;
 
+    @media(max-width: @screen-xs-max) {
+        margin-bottom: 30px;
+    }
+
     .form-control-feedback {
         top: 5px;
         font-size: 14px;
@@ -146,6 +150,11 @@ body {
 
     input:focus ~ .highlight {
         animation: highlightInput 300ms @easer;
+    }
+
+    small {
+        color: @color-text-secondary;
+        font-weight: 400;
     }
 }
 
