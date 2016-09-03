@@ -3,7 +3,27 @@
 main {
     padding-top: 20px;
 
-    .panel-body.visible {
-        max-height: 90% !important;
+    > .container {
+        > .panel {
+            padding: 0;
+            min-height: 500px;
+
+            @media (min-width: @screen-sm-min) {
+                position: absolute;
+            }
+
+            &.panel-first {
+                z-index: 1;
+                border-top: 1px solid #eee;
+            }
+
+            &.panel-second {
+                transform: rotate(2deg);
+            }
+
+            > .panel-heading {
+                margin-bottom: 40px;
+            }
+        }
     }
 }

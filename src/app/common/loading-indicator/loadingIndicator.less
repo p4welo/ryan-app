@@ -2,13 +2,46 @@
 
 loading-indicator {
     > div {
-        position: fixed;
-        bottom: 10px;
-        left: 10px;
-        width: 250px;
-        background-color: @color-primary-dark;
-        color: @color-text;
-        padding: 10px;
-        z-index: 9999;
+        background-color: @color-accent;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        bottom:0;
+        z-index: 3;
+        transition: all 200ms ease-in-out;
+        max-height: 0;
+        overflow: hidden;
+
+        //position: fixed;
+        //bottom: 10px;
+        //left: 10px;
+        //width: 250px;
+        //background-color: @color-accent;
+        //color: @color-text;
+        //padding: 10px;
+        //z-index: 9999;
+
+        //position: absolute;
+        //bottom: 0;
+        //right: 50%;
+        //width: 2000px;
+        //height: 2000px;
+        //max-width: 0;
+        //max-height: 0;
+        //overflow: hidden;
+        //transition: all 500ms ease;
+        //z-index: 2;
+        //border-radius: 50%;
+        //
+        &.indicating {
+            max-height: 100%;
+        //    max-width: 2000px;
+        //    max-height: 2000px;
+        //    bottom: 100%;
+        //    right:-50%;
+        //    background: #FF4081;
+        //    border-radius: 50%;
+        //
+        }
     }
 }

@@ -6,43 +6,165 @@ body {
     background-color: @color-background;
 }
 
-.panel {
-    border-radius: 5px;
+.panel-flat {
     border: 0;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
 
-    &.panel-flat {
-        border-color: #ddd;
+    .panel-heading {
+        padding-top: 20px;
+        padding-left: 0;
+        padding-bottom: 20px;
+        background-color: white;
+        border-top-right-radius: 3px;
+        border-top-left-radius: 3px;
 
-        .panel-heading {
-            padding-top: 20px;
-            padding-left: 0;
-            padding-bottom: 20px;
-            background-color: white;
-            border-top-right-radius: 3px;
-            border-top-left-radius: 3px;
+        + .panel-body {
+            padding-top: 0;
+        }
 
-            + .panel-body {
-                padding-top: 0;
-            }
+        h6 {
+            font-size: 15px;
 
-            h6 {
-                font-size: 15px;
-
-                &.panel-title {
-                    margin-top: 2px;
-                    margin-bottom: 2px;
-                }
-            }
-
-            h3 {
-                //text-transform: uppercase;
-                border-left: 5px solid @color-primary-dark;
-                color: @color-primary-dark;
-                padding-left: 20px;
-                padding-top: 10px;
-                padding-bottom: 10px;
+            &.panel-title {
+                margin-top: 2px;
+                margin-bottom: 2px;
             }
         }
+
+        h3 {
+            border-left: 5px solid @color-primary-dark;
+            color: @color-primary-dark;
+            padding-left: 20px;
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+    }
+}
+
+// MATERIAL INPUT
+@keyframes highlightInput {
+    from {
+        background: @color-primary;
+    }
+    to {
+        width: 0;
+        background: transparent;
+    }
+}
+
+.material-input {
+    position: relative;
+    margin-bottom: 65px;
+
+    .form-control-feedback {
+        top: 5px;
+        font-size: 14px;
+        transition: all 200ms @easer;
+        color: @color-primary-light;
+    }
+
+    input:focus ~ .form-control-feedback,
+    input:valid ~ .form-control-feedback {
+        top: -30px;
+        color: @color-primary;
+    }
+
+    .rotate-65 {
+        transform: rotate(65deg);
+    }
+
+    .rotate-115 {
+        transform: rotate(115deg);
+    }
+
+    input {
+        font-size: 18px;
+        padding: 10px 10px 10px 5px;
+        display: block;
+        width: 100%;
+        border: none;
+        border-bottom: 1px solid #DDD;
+        background-color: transparent;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    label {
+        color: @color-primary-light;
+        font-size: 18px;
+        font-weight: normal;
+        position: absolute;
+        pointer-events: none;
+        left: 5px;
+        top: 10px;
+        transition: all 200ms @easer;
+    }
+
+    input:focus ~ label, input:valid ~ label {
+        top: -20px;
+        font-size: 14px;
+        color: @color-primary;
+    }
+
+    .bar {
+        position: relative;
+        display: block;
+        width: 100%;
+
+        &:before,
+        &:after {
+            content: '';
+            height: 2px;
+            width: 0;
+            bottom: 1px;
+            position: absolute;
+            background: @color-primary;
+            transition: all 200ms @easer;
+        }
+        &:before {
+            left: 50%;
+        }
+        &:after {
+            right: 50%;
+        }
+    }
+
+    input:focus ~ .bar:before, input:focus ~ .bar:after {
+        width: 50%;
+    }
+
+    .highlight {
+        position: absolute;
+        height: 60%;
+        top: 25%;
+        left: 0;
+        pointer-events: none;
+        opacity: 0.5;
+    }
+
+    input:focus ~ .highlight {
+        animation: highlightInput 300ms @easer;
+    }
+}
+
+.text-muted {
+    color: @color-divider;
+}
+
+.btn-flat {
+    position: relative;
+    font-weight: 500;
+    border-width: 0;
+    padding: 9px 17px;
+
+    &.focus, &:focus, &:hover {
+        box-shadow: 0 0 0 100px rgba(0, 0, 0, .05) inset;
+    }
+
+    &.btn-primary {
+        color: @color-text;
+        background-color: @color-primary;
     }
 }

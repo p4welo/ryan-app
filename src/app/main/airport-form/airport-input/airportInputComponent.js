@@ -6,6 +6,8 @@ export default {
     template: template,
     controller: controller,
     bindings: {
+        icon: '@',
+        label: '@',
         list: '<',
         onSelect: '&'
     }

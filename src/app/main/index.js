@@ -1,8 +1,8 @@
 import angular from 'angular';
-import searchForm from './search-form';
+import airportForm from './airport-form';
 import mainComponent from './mainComponent';
 
-const main = angular.module('main', [searchForm])
+const main = angular.module('main', [airportForm])
     .component('main', mainComponent)
     .name;
 

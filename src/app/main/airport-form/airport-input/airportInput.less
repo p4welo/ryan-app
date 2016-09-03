@@ -1,0 +1,24 @@
+@import '../../../../stylebase/variables';
+
+airport-input {
+
+    // TYPEAHEAD
+    .dropdown-menu > li {
+        &.active {
+            > a,
+            > a:hover,
+            > a:focus {
+                background-color: @color-accent;
+            }
+        }
+
+        > a {
+            padding: 10px 20px;
+            border-bottom: 1px solid #d3d3d3;
+
+            span.pull-right {
+                padding-left: 20px;
+            }
+        }
+    }
+}

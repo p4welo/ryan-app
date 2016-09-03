@@ -1,0 +1,26 @@
+<form name="form" class="col-xs-12">
+    <div>
+        <airport-input class="col-sm-6"
+                       label="Origin"
+                       icon="glyphicon glyphicon-plane rotate-65"
+                       list="$ctrl.iata.airports"
+                       on-select="$ctrl.onOriginSelect($event)"></airport-input>
+        <airport-input class="col-sm-6"
+                       label="Destination"
+                       icon="glyphicon glyphicon-plane rotate-115"
+                       list="$ctrl.destinations"
+                       on-select="$ctrl.onDestinationSelect($event)"></airport-input>
+    </div>
+    <div>
+        <airport-date class="col-sm-6"
+                      label="Date from"
+                      on-change="$ctrl.onDateFromChange($event)"></airport-date>
+        <airport-date class="col-sm-6"
+                      label="Date to"
+                      on-change="$ctrl.onDateToChange($event)"></airport-date>
+    </div>
+
+    <div class="text-right">
+        <button class="btn btn-flat btn-primary" ng-disabled="form.$invalid">Search</button>
+    </div>
+</form>

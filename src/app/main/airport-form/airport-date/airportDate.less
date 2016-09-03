@@ -1,0 +1,63 @@
+@import '../../../../stylebase/variables';
+
+airport-date {
+
+    //DATE PICKER
+    div[uib-datepicker-popup-wrap] {
+
+        * {
+            outline: none !important;
+        }
+
+        ul {
+            border:0;
+
+            thead {
+                > tr:first-child {
+                    height: 65px;
+
+                    button {
+                        height: 100%;
+                        color: @color-text-secondary;
+
+                        &.uib-title {
+                            font-size: 15px;
+
+                            strong {
+                                font-weight: 400;
+                            }
+                        }
+                    }
+
+                }
+
+
+
+                small {
+                    color: @color-text-secondary;
+                    font-weight: 400;
+                }
+            }
+
+            tbody {
+                button {
+                    .active {
+
+                    }
+                }
+            }
+        }
+
+        .btn {
+            border: 0;
+        }
+
+        .btn.active {
+            background-color: @color-primary;
+            .text-info {
+                color: @color-text;
+            }
+        }
+
+    }
+}

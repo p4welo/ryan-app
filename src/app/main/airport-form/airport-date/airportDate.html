@@ -1,0 +1,15 @@
+<div class="material-input">
+    <input type="text"
+           uib-datepicker-popup
+           ng-model="$ctrl.date"
+           ng-model-options="{updateOn: 'default blur'}"
+           is-open="$ctrl.opened"
+           datepicker-options="$ctrl.dateOptions"
+           required
+           ng-focus="$ctrl.open()"
+           close-text="Close"/>
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <span class="form-control-feedback glyphicon glyphicon-calendar"></span>
+    <label ng-bind="::$ctrl.label"></label>
+</div>

@@ -1,0 +1,30 @@
+<div class="material-input form-group has-feedback">
+    <input type="text" required
+           ng-model="$ctrl.selected"
+           uib-typeahead="airport as airport.name + ' (' + airport.iataCode + ')' for airport in $ctrl.list | filter: $viewValue | limitTo: 10"
+           typeahead-editable="false"
+           typeahead-template-url="customTemplate.html"
+           typeahead-on-select="$ctrl.onChange($item)">
+    <span class="highlight"></span>
+    <span class="bar"></span>
+    <span class="form-control-feedback {{$ctrl.icon}}"></span>
+    <label ng-bind="::$ctrl.label"></label>
+    <span>
+        <small ng-bind="$ctrl.selected.country.name"></small>&nbsp;
+    </span>
+</div>
+
+
+<script type="text/ng-template" id="customTemplate.html">
+    <a href>
+        <p style="margin-bottom: 5px;">
+            <span ng-bind-html="match.model.name | uibTypeaheadHighlight:query"></span>
+            <span class="pull-right">
+                (<span ng-bind="match.model.iataCode"></span>)
+            </span>
+        </p>
+        <p style="margin-bottom: 0">
+            <span ng-bind="match.model.country.name"></span>
+        </p>
+    </a>
+</script>
