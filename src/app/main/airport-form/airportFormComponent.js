@@ -6,6 +6,7 @@ export default {
     template: template,
     controller: controller,
     bindings: {
-        onSubmit: '&'
+        onSubmit: '&',
+        iata: '<'
     }
 };

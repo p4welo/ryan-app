@@ -3,12 +3,7 @@ class AirportFormController {
         'ngInject';
         this._airportService = airportService;
         this._eventEmitter = eventEmitter;
-        this._activate();
-    }
-
-    _activate() {
         this.criteria = {};
-        this._airportService.getAirports().then(result => this.iata = result.data);
     }
 
     onOriginSelect(origin) {

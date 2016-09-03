@@ -1,30 +1,38 @@
 <div class="panel-heading">
-    <a href class="pull-right btn-closing" ng-click="$ctrl.onClose()">
+    <a href class="pull-right btn-closing" ng-click="$ctrl.onClose()" uib-tooltip="close">
         <i class="glyphicon glyphicon-remove"></i>
     </a>
-    <h3>Results found</h3>
+    <h3>
+        Results found for flight:
+        <p class="text-accent" style="margin-top: 5px">
+            <span ng-bind="::$ctrl.criteria.origin.name"></span>
+            -
+            <span ng-bind="::$ctrl.criteria.destination.name"></span>
+        </p>
+    </h3>
 </div>
 
 <div class="col-xs-12">
     <div class="list-group">
-        <div class="list-group-item" ng-repeat="flight in $ctrl.flights">
+        <div class="list-group-item" ng-repeat="flight in $ctrl.flights | orderBy: 'price'">
             <h4 class="list-group-item-heading text-right">
                 <span>
-                    <span ng-bind="flight.price | number:2"></span>
-                    <span ng-bind="flight.currency"></span>
+                    <span ng-bind="::flight.price | number:2"></span>
+                    <span ng-bind="::flight.currency"></span>
                 </span>
             </h4>
             <p class="list-group-item-text">
             <dl class="dl-horizontal">
-                <dt class="text-accent" ng-bind="flight.dateFrom | date: 'yyyy-MM-dd HH:mm'"></dt>
-                <dd>From</dd>
-                <dt class="text-accent" ng-bind="flight.dateTo | date: 'yyyy-MM-dd HH:mm'"></dt>
-                <dd>To</dd>
+                <dt>From</dt>
+                <dd class="text-accent" ng-bind="::flight.dateFrom | date: 'yyyy-MM-dd HH:mm'"></dd>
+                <dt>To</dt>
+                <dd class="text-accent" ng-bind="::flight.dateTo | date: 'yyyy-MM-dd HH:mm'"></dd>
             </dl>
+
             </p>
         </div>
-        <div class="list-group-item" ng-if="$ctrl.flights.length < 1">
-            There's no flights on given criteria
+        <div class="list-group-item" ng-if="::$ctrl.flights.length < 1">
+            There's no flights by given criteria
         </div>
     </div>
 </div>

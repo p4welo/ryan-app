@@ -1,10 +1,9 @@
 import angular from 'angular';
+import uibTooltip from 'angular-ui-bootstrap/src/tooltip';
 import airportResultsComponent from './airportResultsComponent';
-import airportResultsService from './airportResultsService';
 
-const airportResults = angular.module('airportResults', [])
+const airportResults = angular.module('airportResults', [uibTooltip])
     .component('airportResults', airportResultsComponent)
-    .service('airportResultsService', airportResultsService)
     .name;
 
 export default airportResults;

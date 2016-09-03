@@ -2,6 +2,11 @@ class MainController {
     constructor(airportService) {
         'ngInject';
         this._airportService = airportService;
+        this._activate();
+    }
+
+    _activate() {
+        this._airportService.getAirports().then(result => this.iata = result.data);
     }
 
     submit(criteria) {
