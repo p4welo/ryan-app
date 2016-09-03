@@ -159,12 +159,14 @@ body {
     border-width: 0;
     padding: 9px 17px;
 
-    &.focus, &:focus, &:hover {
+    &:focus, &:hover {
         box-shadow: 0 0 0 100px rgba(0, 0, 0, .05) inset;
     }
 
     &.btn-primary {
         color: @color-text;
-        background-color: @color-primary;
+        &, &:focus, &:hover {
+            background-color: @color-accent;
+        }
     }
 }

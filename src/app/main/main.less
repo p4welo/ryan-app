@@ -3,7 +3,7 @@
 main {
     padding-top: 20px;
 
-    > .container {
+    > .container-fluid {
         > .panel {
             padding: 0;
             min-height: 500px;
@@ -19,6 +19,27 @@ main {
 
             &.panel-second {
                 transform: rotate(2deg);
+            }
+
+            &.panel-zero {
+                z-index: 3;
+                margin-top: 20px;
+                border-top: 1px solid #eee;
+                top: -100%;
+                overflow: hidden;
+                transition: all 500ms @easer;
+
+                @media (max-width: @screen-xs-max) {
+                    width: ~"calc(100% - 30px)";
+                    position: absolute;
+                }
+
+                &.visible {
+                    top: 20px;
+                    @media (min-width: @screen-sm-min) {
+                        left: 30px;
+                    }
+                }
             }
 
             > .panel-heading {

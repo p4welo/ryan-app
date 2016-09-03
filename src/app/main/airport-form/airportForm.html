@@ -1,4 +1,4 @@
-<form name="form" class="col-xs-12">
+<form name="form" class="col-xs-12" ng-submit="$ctrl.submit()">
     <div>
         <airport-input class="col-sm-6"
                        label="Origin"
@@ -20,7 +20,7 @@
                       on-change="$ctrl.onDateToChange($event)"></airport-date>
     </div>
 
-    <div class="text-right">
-        <button class="btn btn-flat btn-primary" ng-disabled="form.$invalid">Search</button>
+    <div class="text-right col-xs-12">
+        <button class="btn btn-flat btn-primary" type="submit" ng-disabled="form.$invalid">Search</button>
     </div>
 </form>

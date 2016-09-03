@@ -4,5 +4,8 @@ import template from './airportForm.html';
 
 export default {
     template: template,
-    controller: controller
+    controller: controller,
+    bindings: {
+        onSubmit: '&'
+    }
 };
