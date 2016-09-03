@@ -12,20 +12,20 @@ main {
                 position: absolute;
             }
 
-            &.panel-first {
+            &.panel-form {
                 z-index: 1;
                 border-top: 1px solid @color-divider;
             }
 
-            &.panel-second {
+            &.panel-back {
                 transform: rotate(2deg);
             }
 
-            &.panel-zero {
+            &.panel-results {
                 z-index: 3;
                 margin-top: 20px;
                 border-top: 1px solid @color-divider;
-                top: -100%;
+                top: -200%;
                 overflow: hidden;
                 transition: all 500ms @easer;
 
@@ -51,7 +51,7 @@ main {
                 }
             }
 
-            > .panel-heading {
+            .panel-heading {
                 padding-top: 0;
                 margin-bottom: 40px;
             }

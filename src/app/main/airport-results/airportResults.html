@@ -1,3 +1,10 @@
+<div class="panel-heading">
+    <a href class="pull-right btn-closing" ng-click="$ctrl.onClose()">
+        <i class="glyphicon glyphicon-remove"></i>
+    </a>
+    <h3>Results found</h3>
+</div>
+
 <div class="col-xs-12">
     <div class="list-group">
         <div class="list-group-item" ng-repeat="flight in $ctrl.flights">
@@ -10,11 +17,14 @@
             <p class="list-group-item-text">
             <dl class="dl-horizontal">
                 <dt class="text-accent" ng-bind="flight.dateFrom | date: 'yyyy-MM-dd HH:mm'"></dt>
-                <dd>Departure</dd>
+                <dd>From</dd>
                 <dt class="text-accent" ng-bind="flight.dateTo | date: 'yyyy-MM-dd HH:mm'"></dt>
-                <dd>Arrival</dd>
+                <dd>To</dd>
             </dl>
             </p>
+        </div>
+        <div class="list-group-item" ng-if="$ctrl.flights.length < 1">
+            There's no flights on given criteria
         </div>
     </div>
 </div>

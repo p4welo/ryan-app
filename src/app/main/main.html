@@ -1,23 +1,16 @@
 <div class="container-fluid">
-    <div class="panel panel-flat panel-first col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
+    <div class="panel panel-flat panel-form col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 col-xs-12">
         <loading-indicator></loading-indicator>
-        <div class="panel-heading">
-            <h3>Cheap flight finder</h3>
-        </div>
         <airport-form on-submit="$ctrl.submit($event)"></airport-form>
     </div>
-    <div class="panel panel-flat panel-second col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 hidden-xs"></div>
-    <!--<div class="panel panel-flat panel-zero col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 visible">-->
-        <div class="panel panel-flat panel-zero col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" ng-class="{'visible': $ctrl.flights}">
-        <div class="panel-heading">
-            <a href class="pull-right btn-closing" ng-click="$ctrl.cleanCriteria()">
-                <i class="glyphicon glyphicon-remove"></i>
-            </a>
-            <h3>Results found</h3>
-        </div>
+
+    <!--<div class="panel panel-flat panel-results col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 visible">-->
+    <div class="panel panel-flat panel-results col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2" ng-class="{'visible': $ctrl.flights}">
         <airport-results flights="$ctrl.flights"
-                         criteria="$ctrl.criteria"></airport-results>
+                         criteria="$ctrl.criteria"
+                         on-close="$ctrl.cleanCriteria()"></airport-results>
     </div>
 
+    <div class="panel panel-flat panel-back col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2 hidden-xs"></div>
 </div>
 
